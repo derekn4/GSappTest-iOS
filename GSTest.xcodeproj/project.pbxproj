@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D40D068DB6B83F3B60C4321 /* Pods_GSTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA390611B4E81C5CEB4DCD6 /* Pods_GSTest.framework */; };
+		F24AEB9C25CDF7A50058EE2D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F24AEB9B25CDF7A50058EE2D /* GoogleService-Info.plist */; };
 		F2C8D4A725C3C7D600ECDD36 /* GSTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8D4A625C3C7D600ECDD36 /* GSTestApp.swift */; };
 		F2C8D4A925C3C7D600ECDD36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C8D4A825C3C7D600ECDD36 /* ContentView.swift */; };
 		F2C8D4AB25C3C7D900ECDD36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2C8D4AA25C3C7D900ECDD36 /* Assets.xcassets */; };
@@ -14,6 +16,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FA390611B4E81C5CEB4DCD6 /* Pods_GSTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GSTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D54A2D62A35E6856DF27A9E /* Pods-GSTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSTest.release.xcconfig"; path = "Target Support Files/Pods-GSTest/Pods-GSTest.release.xcconfig"; sourceTree = "<group>"; };
+		79BB1E6DBBED0D41E2B78DDB /* Pods-GSTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GSTest.debug.xcconfig"; path = "Target Support Files/Pods-GSTest/Pods-GSTest.debug.xcconfig"; sourceTree = "<group>"; };
+		F24AEB9B25CDF7A50058EE2D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F2C8D4A325C3C7D600ECDD36 /* GSTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GSTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2C8D4A625C3C7D600ECDD36 /* GSTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSTestApp.swift; sourceTree = "<group>"; };
 		F2C8D4A825C3C7D600ECDD36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,17 +33,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D40D068DB6B83F3B60C4321 /* Pods_GSTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		136161C12E63B1EBBF64CC6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79BB1E6DBBED0D41E2B78DDB /* Pods-GSTest.debug.xcconfig */,
+				4D54A2D62A35E6856DF27A9E /* Pods-GSTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		230DCCE5B067F29350EDA0FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FA390611B4E81C5CEB4DCD6 /* Pods_GSTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F2C8D49A25C3C7D600ECDD36 = {
 			isa = PBXGroup;
 			children = (
+				F24AEB9B25CDF7A50058EE2D /* GoogleService-Info.plist */,
 				F2C8D4A525C3C7D600ECDD36 /* GSTest */,
 				F2C8D4A425C3C7D600ECDD36 /* Products */,
+				136161C12E63B1EBBF64CC6E /* Pods */,
+				230DCCE5B067F29350EDA0FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2C8D4B225C3C7D900ECDD36 /* Build configuration list for PBXNativeTarget "GSTest" */;
 			buildPhases = (
+				521B74F42647EA506DD8EB8A /* [CP] Check Pods Manifest.lock */,
 				F2C8D49F25C3C7D600ECDD36 /* Sources */,
 				F2C8D4A025C3C7D600ECDD36 /* Frameworks */,
 				F2C8D4A125C3C7D600ECDD36 /* Resources */,
+				1DD63709BC69BD0CE6311B84 /* [CP] Embed Pods Frameworks */,
+				3AAF6E32D2293887775BC931 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,10 +159,70 @@
 			files = (
 				F2C8D4AE25C3C7D900ECDD36 /* Preview Assets.xcassets in Resources */,
 				F2C8D4AB25C3C7D900ECDD36 /* Assets.xcassets in Resources */,
+				F24AEB9C25CDF7A50058EE2D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DD63709BC69BD0CE6311B84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GSTest/Pods-GSTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GSTest/Pods-GSTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GSTest/Pods-GSTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AAF6E32D2293887775BC931 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GSTest/Pods-GSTest-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GSTest/Pods-GSTest-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GSTest/Pods-GSTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		521B74F42647EA506DD8EB8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GSTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F2C8D49F25C3C7D600ECDD36 /* Sources */ = {
@@ -264,6 +355,7 @@
 		};
 		F2C8D4B325C3C7D900ECDD36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79BB1E6DBBED0D41E2B78DDB /* Pods-GSTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -285,6 +377,7 @@
 		};
 		F2C8D4B425C3C7D900ECDD36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D54A2D62A35E6856DF27A9E /* Pods-GSTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

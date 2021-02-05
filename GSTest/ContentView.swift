@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            Button(action: {
+                //Log In User
+                
+                
+            }) {
+                Text("Sign In")
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 45)
+                    .background(Color.red)
+                    .clipShape(Capsule())
+            }
+        }
     }
 }
 
