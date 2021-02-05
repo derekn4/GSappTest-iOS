@@ -6,14 +6,20 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct ContentView: View {
+    
+    @ObservedObject var info : AppDelegate
     
     var body: some View {
         VStack{
             Button(action: {
                 //Log In User
+                GIDSignIn.sharedInstance()?.presentingViewController =
+                    UIApplication.shared.windows.first?.rootViewController
                 
+                GIDSignIn.sharedInstance()?.signIn()
                 
             }) {
                 Text("Sign In")
@@ -24,12 +30,8 @@ struct ContentView: View {
                     .background(Color.red)
                     .clipShape(Capsule())
             }
+            
+            Text(info.email).padding(.top, 25)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

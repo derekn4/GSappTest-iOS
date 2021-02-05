@@ -19,12 +19,16 @@ struct GSTestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(info: self.delegate)
         }
     }
 }
 
-class AppDelegate: NSObject, UIApplicationDelegate, GIDSignInDelegate {
+//To Observer or read data from app delegate
+
+class AppDelegate: NSObject, UIApplicationDelegate, GIDSignInDelegate, ObservableObject {
+    @Published var email = ""
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
             [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -39,6 +43,15 @@ class AppDelegate: NSObject, UIApplicationDelegate, GIDSignInDelegate {
       }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        if error != nil {
+            print(error.localizedDescription)
+            return
+        }else {
+            print("Log Out for \(self.email) success!")
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         guard let user = user else {return}
         
         let credential = GoogleAuthProvider.credential(withIDToken: user.authentication.idToken,
@@ -49,12 +62,15 @@ class AppDelegate: NSObject, UIApplicationDelegate, GIDSignInDelegate {
                 print((error?.localizedDescription)!)
                 return
             }
+
+            
+            NotificationCenter.default.post(name: NSNotification.Name("SIGNIN"),  object: nil)
+            
+            self.email = (result?.user.email)!
             print(result?.user.email)
+            
         }
-    }
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        print(error.localizedDescription)
     }
 
 }
